@@ -1,77 +1,16 @@
-# ⚡ THE ARCHITECT PORTFOLIO | ER. SUJAN RAI
+# React + Vite
 
-> ### 🚀 Powered by [CodeVora UI](https://codevoraui.com)
-> **Elevate your web projects with CodeVora UI.** Get free, high-performance animated components, professional UI templates, and production-ready code snippets. 
-> **[Explore CodeVora UI Now →](https://codevoraui.com)**
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-![License](https://img.shields.io/badge/license-MIT-green)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Node](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🖥️ Overview
-A high-end, **Hacker-Themed Developer Portfolio** designed with a terminal-inspired aesthetic. This project showcases advanced React patterns, interactive canvas backgrounds (Matrix Rain), and professional UI/UX principles.
+## React Compiler
 
-### 🛠️ Key Features
-- **Matrix Binary Rain:** High-performance Canvas API implementation for a smooth hacker background.
-- **Interactive Terminal UI:** Custom-built terminal cards and console-style navigation.
-- **Dynamic Project Dossier:** Auto-incrementing project IDs and responsive layout.
-- **Secure Communication:** Contact protocols integrated with modern validation.
-- **Cyber-Sidebar:** Mobile-responsive navigation with backdrop-blur and "System Override" entry animations.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🚀 Built With
-* **Frontend:** React.js, React Icons, CSS3 (Custom Variables/Keyframes)
-* **Animations:** Framer Motion / Custom Canvas API
-* **Styles:** Scoped Modular CSS
-* **Components:** Logic-driven UI elements from **CodeVora UI**
+## Expanding the ESLint configuration
 
----
-
-## 📦 Installation & Setup
-
-1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/yourusername/architect-portfolio.git](https://github.com/yourusername/architect-portfolio.git)
-   ```
-2. **Navigate to the directory:**
-   ```bash
-   cd architect-portfolio
-   ```
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-4. **Launch the development server:**
-   ```bash
-   npm start 
-   ```
-   #    or
-   ```bash
-   npm run dev
-   ```
-
-
-### 💎 Support My Work
-
-- **If you find this project helpful, consider checking out my main project:**
-**🚀 CodeVora UI** – The Ultimate Library for Modern Developers
-
-
-**✨ What CodeVora UI Offers**
-- ✅ Free Animated UI Components
-- ✅ Professional Layout Templates
-- ✅ Copy-Paste Ready Code Snippets
-
-
-**🌐 Website:** 
-- CodeVora UI: [`codevora140.vercel.app`](https://codevora140.vercel.app)
-
-
-#   👤 Contact
-
-**Er. Sujan Rai**
-
--   🌐 Portfolio: [`sujan140.vercel.app`]
--   💻 GitHub: [`https://github.com/Sujan-Rai-426/`]
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
