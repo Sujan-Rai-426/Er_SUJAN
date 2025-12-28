@@ -4,7 +4,7 @@ import { Navbar, Footer, } from './components/Components_Import'
 import Home from './pages/Home'
 import Interactive_Background from './utils/Interactive_Background'
 import Parent_API_Provider from './context/Parent_API_Provider'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
 
@@ -15,15 +15,13 @@ function App() {
                 <div>
                     <Navbar />
 
-                <Interactive_Background>
-
-                    <main className='container'>
-                        <Routes>
-                            <Route exact path='/' element={ <Home /> } />
-                        </Routes>
-                    </main>
-
-                </Interactive_Background>
+                    <Interactive_Background>
+                        <main className='container'>
+                            <Routes>
+                                <Route exact path='/' element={ <Home /> } />
+                            </Routes>
+                        </main>
+                    </Interactive_Background>
 
                     <Footer/>
 
