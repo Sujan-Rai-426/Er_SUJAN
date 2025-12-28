@@ -73,5 +73,5 @@ A high-end, **Hacker-Themed Developer Portfolio** designed with a terminal-inspi
 
 **Er. Sujan Rai**
 
--   🌐 Portfolio: [`sujan140.vercel.app`]
--   💻 GitHub: [`https://github.com/Sujan-Rai-426/`]
+-   🌐 Portfolio: [`sujan140.vercel.app`](sujan140.vercel.app)
+-   💻 GitHub: [`https://github.com/Sujan-Rai-426/`](https://github.com/Sujan-Rai-426/)
