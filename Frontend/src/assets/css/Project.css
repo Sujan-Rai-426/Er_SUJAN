@@ -1,0 +1,192 @@
+:root {
+    --p-neon: #00ff41;
+    --p-neon-dim: rgba(0, 255, 65, 0.2);
+    --p-bg-card: rgba(5, 10, 5, 0.95);
+    --p-font: 'Courier New', Courier, monospace;
+}
+
+.p-project-section {
+    padding: 0;
+    font-family: var(--p-font);
+    color: var(--p-neon);
+    background: transparent;
+}
+
+.p-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.p-header {
+    margin-bottom: 50px;
+    border-left: 4px solid var(--p-neon);
+    padding-left: 20px;
+}
+
+.p-title {
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 15px;
+    margin: 0;
+}
+
+.p-subtitle {
+    opacity: 0.6;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Grid Logic */
+.p-grid {
+    display: grid;
+    /* This creates a 3-col on Laptop, 2-col on Tablet, 1-col on Mobile automatically */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+/* The Terminal Card */
+.p-terminal-card {
+    background: var(--p-bg-card);
+    border: 1px solid var(--p-neon-dim);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Top Bar Styling */
+.p-terminal-header {
+    background: rgba(0, 255, 65, 0.08);
+    padding: 12px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--p-neon-dim);
+}
+
+.p-dots { display: flex; gap: 8px; }
+.p-dot { width: 11px; height: 11px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+.p-id { 
+    font-size: 0.75rem; 
+    color: #fff; 
+    opacity: 0.4; 
+    font-weight: bold;
+}
+
+/* Image & Hover Scanning */
+.p-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+    border-bottom: 1px solid var(--p-neon-dim);
+}
+
+.p-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.7);
+    transition: 0.6s ease;
+}
+
+.p-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 255, 65, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    backdrop-filter: blur(2px);
+}
+
+/* Info Section */
+.p-info { padding: 25px; }
+
+.p-project-name { 
+    color: #fff; 
+    margin-bottom: 12px; 
+    font-size: 1.25rem; 
+    letter-spacing: 1px;
+}
+
+.p-project-desc { 
+    color: #a0a0a0; 
+    font-size: 0.95rem; 
+    line-height: 1.6; 
+    margin-bottom: 25px; 
+}
+
+/* Tech Tags */
+.p-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.p-tag {
+    font-size: 0.75rem;
+    background: rgba(0, 255, 65, 0.03);
+    border: 1px solid var(--p-neon-dim);
+    padding: 5px 12px;
+    color: var(--p-neon);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Interaction Effects */
+@media (hover: hover) {
+    .p-project-section{ padding: 1.8rem 0 0 0 !important; }
+    .p-header { margin-bottom: 15px; }
+    .p-terminal-card:hover {
+        transform: translateY(-8px);
+        border-color: var(--p-neon);
+    }
+    
+    .p-terminal-card:hover img {
+        filter: grayscale(0%) brightness(1);
+        transform: scale(1.05);
+    }
+    
+    .p-terminal-card:hover .p-overlay {
+        opacity: 1;
+    }
+}
+
+.p-icon-btn {
+    background: #000;
+    color: var(--p-neon);
+    width: 45px; height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 12px;
+    font-size: 1.3rem;
+    border: 1px solid var(--p-neon);
+    transition: 0.3s;
+}
+
+.p-icon-btn:hover {
+    background: var(--p-neon);
+    color: #000;
+    box-shadow: 0 0 15px var(--p-neon);
+}
+
+/* Final Mobile Polish */
+@media screen and (max-width: 480px) {
+    .p-project-section{ padding: 1.5rem 0 0 0 !important; }
+    .p-grid { grid-template-columns: 1fr; }
+    .p-image-wrapper { height: 170px; }
+    .p-info { padding: 20px; }
+    .p-tag { font-size: 0.7rem; }
+}
+

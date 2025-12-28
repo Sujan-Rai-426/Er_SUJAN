@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root{
+  --n-font: 'Courier New', Courier, monospace;
+}
+
+.Home-container{
+  font-family: var(--n-font);
+  min-height: 90vh;
+  width: 100%;
+}
+.Home-section{
+  font-family: var(--n-font);
+  margin: 3rem 0 5rem 0;
+  padding: 0.8rem 0;
+}
+@media (max-width: 768px){
+  .Home-section{
+    margin: 2.5rem 0 2rem 0;
+  }
+}

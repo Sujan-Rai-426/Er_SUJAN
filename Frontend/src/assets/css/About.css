@@ -1,0 +1,231 @@
+:root {
+    --a-neon: #00ff41;
+    --a-neon-dim: rgba(0, 255, 65, 0.15);
+    --a-bg-dark: rgba(5, 10, 5, 0.85);
+    --a-font: 'Courier New', Courier, monospace;
+}
+
+.a-about-section {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--a-font);
+}
+
+.a-about-container {
+    width: 100%;
+    /* max-width: 1100px; */
+    /* background: var(--a-bg-dark); */
+    border: 1px solid var(--a-neon-dim);
+    padding: 40px;
+    position: relative;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Header Logic */
+.a-dossier-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--a-neon);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+.a-header-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.a-header-title h2 {
+    font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+    color: #fff;
+    margin: 0;
+}
+
+.a-clearance {
+    background: var(--a-neon);
+    color: #000;
+    font-weight: bold;
+    padding: 5px 15px;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+}
+
+/* Grid Layout */
+.a-content-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr 220px;
+    gap: 50px;
+    align-items: start;
+}
+
+/* Metadata (Left Side) */
+.a-metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.a-meta-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.a-meta-value {
+    color: var(--a-neon);
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* Bio Text (Center) */
+.a-bio-description p {
+    color: #ccc;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    text-align: justify;
+}
+.a-typing-text strong {
+    color: #9cf764;
+    text-shadow: 0 0 4px #1b8836;
+    font-weight: 900;
+}
+
+.a-prompt { color: var(--a-neon); margin-right: 10px; }
+
+.a-social-cluster {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.a-social-icon, .a-social-cluster a {
+    color: var(--a-neon);
+    font-size: 1.8rem;
+    transition: 0.3s ease;
+}
+
+.a-social-cluster a:hover {
+    transform: translateY(-5px);
+    filter: drop-shadow(0 0 8px var(--a-neon));
+}
+
+/* Buttons (Right Side) */
+.a-action-block {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.a-action-block a{
+    text-decoration: none;
+}
+.a-action-block a :hover{
+    text-decoration: none;
+    color: black;
+}
+
+.a-btn {
+    padding: 15px 20px;
+    font-family: var(--a-font);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.a-btn-main {
+    background: var(--a-neon);
+    border: 1px solid var(--a-neon);
+    color: #000;
+}
+
+.a-btn-outline {
+    background: transparent;
+    border: 1px solid var(--a-neon);
+    color: var(--a-neon);
+}
+
+.a-btn:hover {
+    box-shadow: 0 0 20px var(--a-neon-dim);
+    transform: scale(1.02);
+}
+
+/* Animations */
+.a-blink { animation: a-blink-anim 1.5s infinite; }
+@keyframes a-blink-anim { 50% { opacity: 0; } }
+
+/* ---------------------------------
+   RESPONSIVE DESIGN BREAKPOINTS
+--------------------------------- */
+
+/* Tablet View (1024px and below) */
+@media screen and (max-width: 1024px) {
+    .a-content-grid {
+        grid-template-columns: 1fr 220px;
+        gap: 30px;
+    }
+    .a-metadata {
+        grid-column: 1 / -1; /* Stretch across top */
+        flex-direction: row;
+        justify-content: space-between;
+        padding-bottom: 20px;
+        border-bottom: 1px solid var(--a-neon-dim);
+    }
+}
+
+/* Mobile View (768px and below) */
+@media screen and (max-width: 768px) {
+
+    .a-about-container {
+        background: none;
+        border: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        padding: 0;
+        position: relative;
+    }
+
+    .a-about-section { padding: 60px 15px; }
+    
+    .a-dossier-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+
+    .a-content-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .a-metadata {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .a-social-cluster {
+        justify-content: center;
+    }
+
+    .a-action-block {
+        flex-direction: row;
+        margin: 2rem 0;
+    }
+
+    .a-btn {
+        flex: 1;
+        font-size: 0.75rem;
+        padding: 12px 5px;
+    }
+}

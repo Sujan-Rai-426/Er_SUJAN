@@ -1,0 +1,129 @@
+:root {
+    --s-neon: #00ff41;
+    --s-bg: #050a05;
+    --s-font: 'Courier New', Courier, monospace;
+}
+
+.s-section {
+    padding: clamp(50px, 10vh, 100px) 20px;
+    /* background-color: var(--s-bg); */
+    font-family: var(--s-font);
+    color: var(--s-neon);
+}
+
+.s-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.s-header {
+    margin-bottom: 60px;
+    border-left: 4px solid var(--s-neon);
+    padding-left: 20px;
+}
+
+.s-title {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.s-subtitle {
+    opacity: 0.6;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Responsive Grid */
+.s-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Service Card */
+.s-card {
+    position: relative;
+    background: rgba(0, 255, 65, 0.02);
+    border: 1px solid rgba(0, 255, 65, 0.1);
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    height: 100%;
+    backdrop-filter: blur(4px);
+}
+
+.s-card:hover {
+    border-color: var(--s-neon);
+    transform: translateY(-10px);
+    background: rgba(0, 255, 65, 0.05);
+}
+
+/* Corner Accents */
+.s-card::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 20px; height: 20px;
+    border-top: 2px solid var(--s-neon);
+    border-right: 2px solid var(--s-neon);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.s-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Content */
+.s-id {
+    font-size: 3rem;
+    font-weight: 900;
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    opacity: 0.05;
+    color: #fff;
+}
+
+.s-icon-box {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: var(--s-neon);
+    filter: drop-shadow(0 0 5px var(--s-neon));
+}
+
+.s-card-title {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.s-card-desc {
+    color: #aaa;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Tags */
+.s-tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.s-tag {
+    font-size: 0.7rem;
+    color: var(--s-neon);
+    background: rgba(0, 255, 65, 0.1);
+    padding: 4px 10px;
+    border: 1px solid rgba(0, 255, 65, 0.2);
+}
+
+/* Responsive Work */
+@media screen and (max-width: 600px) {
+    .s-header { margin-bottom: 40px; }
+    .s-card { padding: 30px 20px; }
+}

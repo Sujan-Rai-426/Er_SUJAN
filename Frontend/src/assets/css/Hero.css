@@ -1,0 +1,332 @@
+/* Hero.css - Hacker Portfolio Theme */
+
+:root {
+    --h-neon: #00ff41;           /* Matrix Green */
+    --h-bg: #010501;             /* Deep Cyber Black */
+    --h-font: 'Courier New', Courier, monospace;
+    --h-neon-dim: rgba(0, 255, 65, 0.15);
+    --h-danger: #ff3333;
+}
+
+.h-hero-fullscreen {
+    position: relative;
+    width: 100%;
+    /* min-height: 100vh; */
+    /* background: var(--h-bg); */
+    color: var(--h-neon);
+    font-family: var(--h-font);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+}
+
+/* Binary Stream Background */
+.h-binary-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px); */
+    background-size: 100% 3px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Top Navigation HUD */
+.h-top-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 2px 40px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--h-neon-dim);
+    font-size: 0.8rem;
+    z-index: 20;
+    letter-spacing: 2px;
+}
+
+.h-status-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.h-time {
+    color: #fff;
+}
+
+/* Side Terminal Logs */
+.h-side-logs {
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    width: 280px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+    z-index: 5;
+    line-height: 1.6;
+}
+
+.h-log-line {
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.h-timestamp {
+    color: #fff;
+    margin-right: 8px;
+}
+
+/* Main Console Container */
+.h-main-console {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* Profile Module - Responsive Layout */
+.h-profile-module {
+    display: flex;
+    flex-direction: row-reverse; /* Image Right, Text Left */
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+/* Image & Scanning Effect */
+.h-image-wrapper {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    flex-shrink: 0;
+}
+
+.h-profile-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--h-neon);
+    filter: grayscale(1) brightness(0.9) contrast(1.1);
+    box-shadow: 0 0 30px var(--h-neon-dim);
+}
+
+.h-scan-ring {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--h-neon);
+    border-bottom: 2px solid var(--h-neon);
+    border-radius: 50%;
+    animation: h-rotate 4s linear infinite;
+}
+
+/* Identity & Title */
+.h-identity {
+    text-align: left;
+    flex: 1;
+}
+
+.h-title {
+    font-size: clamp(2rem, 4vw, 4.5rem);
+    color: #b6ffa0;;
+    margin: 0;
+    /* text-transform: uppercase; */
+    font-family: revert;
+    letter-spacing: -2px;
+    position: relative;
+}
+
+/* Bio Box Dossier Style */
+.h-bio-box {
+    margin-top: 25px;
+    background: rgba(0, 255, 65, 0.04);
+    padding: 25px;
+    border: 1px solid var(--h-neon-dim);
+    max-width: 600px;
+    backdrop-filter: blur(4px);
+    position: relative;
+}
+
+.h-bio-box::before {
+    content: "SECURE_DATA";
+    position: absolute;
+    top: -10px;
+    right: 15px;
+    background: var(--h-neon);
+    color: #000;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    font-weight: bold;
+}
+
+.h-bio-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 8px 0;
+}
+
+.h-bio-label {
+    color: #fff;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+/* Action Buttons */
+.h-console-actions {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.h-console-btn {
+    background: transparent;
+    border: 1px solid var(--h-neon);
+    color: var(--h-neon);
+    padding: 14px 35px;
+    font-family: var(--h-font);
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: 0.3s all ease;
+    letter-spacing: 1px;
+}
+
+.h-console-btn:hover {
+    background: var(--h-neon);
+    color: #000;
+    box-shadow: 0 0 25px var(--h-neon);
+    transform: translateY(-3px);
+}
+
+.h-console-btn.h-danger {
+    border-color: var(--h-danger);
+    color: var(--h-danger);
+}
+
+.h-console-btn.h-danger:hover {
+    background: var(--h-danger);
+    color: #fff;
+    box-shadow: 0 0 25px var(--h-danger);
+}
+
+/* Bottom Progress HUD */
+.h-bottom-scanner {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    padding: 0 40px;
+    z-index: 10;
+}
+
+.h-scanner-line {
+    width: 100%;
+    height: 1px;
+    background: var(--h-neon);
+    box-shadow: 0 0 10px var(--h-neon);
+    animation: h-pulse 2s infinite ease-in-out;
+}
+
+.h-scanner-text {
+    font-size: 0.7rem;
+    margin-top: 8px;
+    letter-spacing: 3px;
+    opacity: 0.7;
+}
+
+/* Keyframe Animations */
+@keyframes h-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes h-pulse {
+    0%, 100% { opacity: 0.2; transform: scaleX(0.98); }
+    50% { opacity: 0.8; transform: scaleX(1); }
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablets */
+@media screen and (max-width: 1024px) {
+    .h-side-logs{
+        top: 25px;
+    }
+    .h-profile-module {
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .h-image-wrapper {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+    .h-console-actions{ flex-direction: row; }
+    .h-hero-fullscreen {
+        padding-top: 40px; padding-left: 0; padding-right: 0;
+    }
+
+    .h-top-bar{
+        padding: 0;
+    }
+
+    .h-side-logs, .h-top-bar span {
+        display: none;
+    }
+
+    .h-profile-module {
+        flex-direction: column; padding: 0;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .h-image-wrapper {
+        width: 200px;
+        height: 200px;
+    }
+
+    .h-identity {
+        text-align: center;
+    }
+
+    .h-bio-box {
+        text-align: left; /* Keep text aligned left for readability */
+        margin: 20px auto;
+    }
+
+    .h-console-actions {
+        margin-top: 0;
+        flex-direction: column;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .h-console-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .h-title {
+        font-size: 2.5rem;
+    }
+}

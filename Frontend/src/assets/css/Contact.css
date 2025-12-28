@@ -1,0 +1,189 @@
+:root {
+    --c-neon: #00ff41;
+    --c-neon-dim: rgba(0, 255, 65, 0.2);
+    --c-error: #ff3e3e;
+    --c-process: #3498db;
+    --c-bg: #030803;
+    --c-font: 'Courier New', Courier, monospace;
+}
+
+.c-main-section {
+    position: relative;
+    padding: clamp(60px, 10vh, 100px) 20px;
+    font-family: var(--c-font);
+    overflow: hidden;
+    backdrop-filter: blur(3px);
+    border: 1px dashed rgba(0, 255, 65, 0.2);
+}
+
+/* Scanline Animation */
+.c-scanline {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 10px var(--c-neon);
+    z-index: 1;
+    pointer-events: none;
+    animation: scan 6s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: -10%; }
+    100% { top: 110%; }
+}
+
+.c-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header */
+.c-terminal-header {
+    margin-bottom: 50px;
+    border-bottom: 2px solid var(--c-neon);
+    padding-bottom: 15px;
+}
+
+.c-title {
+    color: var(--c-neon);
+    font-size: clamp(1.1rem, 3vw, 2rem);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* TYPING ANIMATION RIGHT VERTICAL BAR HIDE FOR THIS SPECIFIC HEADER */
+.c-title span {
+    border-right: none !important; /* Removes the blinking cursor line */
+    box-shadow: none !important;   /* Some libraries use box-shadow for the cursor */
+}
+
+
+.c-status-line { font-size: 0.85rem; margin-top: 10px; color: #fff; }
+
+/* Status Logic */
+.c-result { font-weight: bold; margin-left: 10px; }
+.status-idle { color: var(--c-neon); animation: blink 1.5s infinite; }
+.status-processing { color: var(--c-process); }
+.status-success { color: var(--c-neon); text-shadow: 0 0 8px var(--c-neon); }
+.status-error { color: var(--c-error); }
+
+@keyframes blink { 50% { opacity: 0.4; } }
+
+/* Grid */
+.c-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 40px;
+}
+
+/* Detail Cards */
+.c-detail-card {
+    display: flex;
+    gap: 20px;
+    background: rgba(0, 255, 65, 0.03);
+    border: 1px solid var(--c-neon-dim);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.c-icon-frame {
+    font-size: 1.5rem;
+    color: var(--c-neon);
+    padding: 10px;
+}
+
+.c-detail-text h3 { font-size: 0.85rem; color: #fff; margin-bottom: 5px; }
+.c-detail-text p { font-size: 0.9rem; color: #aaa; }
+.c-subtext { font-size: 0.75rem !important; opacity: 0.6; margin-top: 5px; }
+
+/* Form Window */
+.c-form-window {
+    background: rgba(0, 15, 0, 0.9);
+    border: 1px solid var(--c-neon-dim);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.c-window-bar {
+    background: rgba(0, 255, 65, 0.1);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--c-neon-dim);
+}
+
+.c-dots { display: flex; gap: 8px; }
+.c-dot { width: 10px; height: 10px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+.c-filename { font-size: 0.7rem; color: #fff; opacity: 0.5; }
+
+/* Input Styling */
+.c-actual-form { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
+.c-input-box { display: flex; flex-direction: column; gap: 8px; }
+.c-input-box label { font-size: 0.75rem; color: var(--c-neon); display: flex; align-items: center; gap: 8px; }
+
+.c-input-box input, .c-input-box textarea {
+    background: #000;
+    border: 1px solid #1a3a1a;
+    padding: 12px;
+    color: #fff;
+    font-family: var(--c-font);
+    outline: none;
+    transition: 0.3s;
+}
+
+.c-input-box input:focus, .c-input-box textarea:focus {
+    border-color: var(--c-neon);
+    box-shadow: inset 0 0 5px var(--c-neon-dim);
+}
+
+/* Button */
+.c-submit-btn {
+    background: var(--c-neon);
+    color: #000;
+    border: none;
+    padding: 18px;
+    font-weight: 900;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    clip-path: polygon(4% 0, 100% 0, 96% 100%, 0 100%);
+    transition: 0.3s;
+}
+
+.c-submit-btn:hover:not(:disabled) {
+    background: #fff;
+    box-shadow: 0 0 25px #fff;
+    transform: translateY(-2px);
+}
+
+.c-loader {
+    width: 20px; height: 20px;
+    border: 3px solid #000;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* Responsive */
+@media screen and (max-width: 900px) {
+    .c-main-section{ padding: 0; }
+    .c-grid { grid-template-columns: 1fr; }
+    .c-contact-left { order: 2; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+}
+
+@media screen and (max-width: 500px) {
+    .c-actual-form { padding: 20px; }
+    .c-submit-btn { clip-path: none; }
+}
