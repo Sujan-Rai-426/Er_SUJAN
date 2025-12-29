@@ -1,8 +1,8 @@
 # ⚡ THE ARCHITECT PORTFOLIO | ER. SUJAN RAI
 
-> ### 🚀 Powered by [CodeVora UI](https://codevoraui.com)
+> ### 🚀 Powered by [CodeVora UI](https://codevora140.vercel.app)
 > **Elevate your web projects with CodeVora UI.** Get free, high-performance animated components, professional UI templates, and production-ready code snippets. 
-> **[Explore CodeVora UI Now →](https://codevoraui.com)**
+> **[Explore CodeVora UI Now →](https://codevora140.vercel.app)**
 
 ---
 
@@ -13,6 +13,25 @@
 
 ## 🖥️ Overview
 A high-end, **Hacker-Themed Developer Portfolio** designed with a terminal-inspired aesthetic. This project showcases advanced React patterns, interactive canvas backgrounds (Matrix Rain), and professional UI/UX principles.
+
+
+## Environment Variables Used (.env) :
+**Backend/.env**
+-  *SECRET_KEY*=your-django-secret-key
+-  *DEBUG*=False
+-  *ALLOWED_HOSTS*=*
+-  *PRODUCTION_DATABASE_URL*=your-production-database-url
+-  *DEVELOPMENT_DATABASE_URL*=your-development-database-url
+-  *CLOUD_NAME*=your-cloudinary-name
+-  *CLOUD_API_KEY*=your-cloudinary-api-key
+-  *CLOUD_API_SECRET*=your-cloudinary-api-secret
+
+**Frontend/.env**
+-  *VITE_API_URL_PRODUCTION*=your-backend-host-url
+-  *VITE_API_URL_DEVELOPMENT*=http://127.0.0.1:8000
+-  *VITE_EMAIL_ACCESS_KEY*=your-email-access-key
+
+
 
 ### 🛠️ Key Features
 - **Matrix Binary Rain:** High-performance Canvas API implementation for a smooth hacker background.
@@ -73,5 +92,5 @@ A high-end, **Hacker-Themed Developer Portfolio** designed with a terminal-inspi
 
 **Er. Sujan Rai**
 
--   🌐 Portfolio: [`sujan140.vercel.app`](sujan140.vercel.app)
+-   🌐 Portfolio: [`er-sujan.vercel.app`](er-sujan.vercel.app)
 -   💻 GitHub: [`https://github.com/Sujan-Rai-426/`](https://github.com/Sujan-Rai-426/)
