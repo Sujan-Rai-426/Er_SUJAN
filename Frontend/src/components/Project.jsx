@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaGithub, FaExternalLinkAlt, FaFolderOpen, FaCode } from 'react-icons/fa';
 import "../assets/css/Project.css";
 
 import { use_Parent_API } from '../context/Parent_API_Context';
-import api from '../config/api';
+
 const Project = () => {
     const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/dusqlukhy/";
 
@@ -17,8 +17,9 @@ const Project = () => {
     // ----------->  error MESSAGE
     if (error) 
         return (
-            <p>Error: {error}</p>
+            <p style={{color:"red"}}>Projects: {error}</p>
         );
+        
     
 
 

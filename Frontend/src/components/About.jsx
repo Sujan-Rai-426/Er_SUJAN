@@ -9,10 +9,10 @@ const About = () => {
     const { cv, locations, loading, error } = use_Parent_API();
 
 
-    if(error)
-        return(
-            <h1>Error: {error}</h1>
-        )
+    // if(error)
+    //     return(
+    //         <h1>Error: {error}</h1>
+    //     )
 
 
     return (

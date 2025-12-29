@@ -18,7 +18,7 @@ const Skills = () => {
     // --------> SHOW error MESSAGE
     if(error)
         return(
-            <h1>Error: {error}</h1>
+            <h1 style={{color: 'red'}}>Skills: {error}</h1>
         )
 
 
