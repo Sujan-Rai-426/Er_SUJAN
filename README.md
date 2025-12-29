@@ -27,7 +27,7 @@ A high-end, **Hacker-Themed Developer Portfolio** designed with a terminal-inspi
 -  *CLOUD_API_SECRET*=your-cloudinary-api-secret
 
 **Frontend/.env**
--  *VITE_API_URL_PRODUCTION*=your-backend-host-url
+-  *VITE_API_URL_PRODUCTION*=https://your-backend-host-url
 -  *VITE_API_URL_DEVELOPMENT*=http://127.0.0.1:8000
 -  *VITE_EMAIL_ACCESS_KEY*=your-email-access-key
 
