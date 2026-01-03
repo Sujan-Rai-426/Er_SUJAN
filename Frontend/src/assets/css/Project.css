@@ -17,12 +17,6 @@
     margin: 0 auto;
 }
 
-.p-header {
-    margin-bottom: 50px;
-    border-left: 4px solid var(--p-neon);
-    padding-left: 20px;
-}
-
 .p-title {
     font-size: clamp(1.1rem, 2.5vw, 1.8rem);
     display: flex;
@@ -32,16 +26,8 @@
     margin: 0;
 }
 
-.p-subtitle {
-    opacity: 0.6;
-    margin-top: 8px;
-    font-size: 0.9rem;
-}
-
-/* Responsive Grid Logic */
 .p-grid {
     display: grid;
-    /* This creates a 3-col on Laptop, 2-col on Tablet, 1-col on Mobile automatically */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
@@ -54,6 +40,7 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
+    cursor: pointer; /* Suggest it is clickable for mobile */
 }
 
 /* Top Bar Styling */
@@ -79,7 +66,7 @@
     font-weight: bold;
 }
 
-/* Image & Hover Scanning */
+/* Image Wrapper */
 .p-image-wrapper {
     position: relative;
     overflow: hidden;
@@ -98,39 +85,42 @@
 .p-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 255, 65, 0.15);
+    background: rgba(0, 0, 0, 0.7); /* Darker for better contrast on mobile */
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: 0.3s;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
+    pointer-events: none; /* Prevent interference unless active */
+}
+
+/* Card Active/Hover State */
+.p-terminal-card:hover .p-overlay,
+.p-terminal-card.is-active .p-overlay {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.p-terminal-card:hover img,
+.p-terminal-card.is-active img {
+    filter: grayscale(0%) brightness(0.5);
+    transform: scale(1.05);
+}
+
+.p-terminal-card:hover,
+.p-terminal-card.is-active {
+    border-color: var(--p-neon);
+    transform: translateY(-5px);
 }
 
 /* Info Section */
 .p-info { padding: 25px; }
-
-.p-project-name { 
-    color: #fff; 
-    margin-bottom: 12px; 
-    font-size: 1.25rem; 
-    letter-spacing: 1px;
-}
-
-.p-project-desc { 
-    color: #a0a0a0; 
-    font-size: 0.95rem; 
-    line-height: 1.6; 
-    margin-bottom: 25px; 
-}
+.p-project-name { color: #fff; margin-bottom: 12px; font-size: 1.25rem; }
+.p-project-desc { color: #a0a0a0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
 
 /* Tech Tags */
-.p-tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
+.p-tech-stack { display: flex; flex-wrap: wrap; gap: 12px; }
 .p-tag {
     font-size: 0.75rem;
     background: rgba(0, 255, 65, 0.03);
@@ -140,25 +130,6 @@
     display: flex;
     align-items: center;
     gap: 6px;
-}
-
-/* Interaction Effects */
-@media (hover: hover) {
-    .p-project-section{ padding: 1.8rem 0 0 0 !important; }
-    .p-header { margin-bottom: 15px; }
-    .p-terminal-card:hover {
-        transform: translateY(-8px);
-        border-color: var(--p-neon);
-    }
-    
-    .p-terminal-card:hover img {
-        filter: grayscale(0%) brightness(1);
-        transform: scale(1.05);
-    }
-    
-    .p-terminal-card:hover .p-overlay {
-        opacity: 1;
-    }
 }
 
 .p-icon-btn {
@@ -173,6 +144,7 @@
     font-size: 1.3rem;
     border: 1px solid var(--p-neon);
     transition: 0.3s;
+    text-decoration: none;
 }
 
 .p-icon-btn:hover {
@@ -181,12 +153,22 @@
     box-shadow: 0 0 15px var(--p-neon);
 }
 
-/* Final Mobile Polish */
-@media screen and (max-width: 480px) {
-    .p-project-section{ padding: 1.5rem 0 0 0 !important; }
-    .p-grid { grid-template-columns: 1fr; }
-    .p-image-wrapper { height: 170px; }
-    .p-info { padding: 20px; }
-    .p-tag { font-size: 0.7rem; }
+/* SKELETON ANIMATION */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+.s-skeleton {
+    background: #222;
+    animation: pulse 1.5s infinite ease-in-out;
+    border-radius: 4px;
 }
 
+/* MOBILE POLISH */
+@media screen and (max-width: 480px) {
+    .p-project-section { padding: 1.5rem 15px !important; }
+    .p-grid { grid-template-columns: 1fr; }
+    .p-image-wrapper { height: 180px; }
+    .p-info { padding: 20px; }
+}
