@@ -7,7 +7,7 @@ const Project = () => {
     const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/dusqlukhy/";
     const { projects = [], loading, error } = use_Parent_API();
 
-    // State to track which card is "active/clicked" on mobile
+    // State to track which card is "active/clicked"
     const [activeCard, setActiveCard] = useState(null);
 
     const projectData = useMemo(() => {
@@ -16,25 +16,23 @@ const Project = () => {
         );
     }, [projects]);
 
-    
-    // Toggle: if clicking the same card, close it; otherwise, open the new one
+    // Toggle Logic: If clicking the same card, reset to null (close); otherwise, open new one.
     const handleToggleOverlay = (id) => {
         setActiveCard(prev => (prev === id ? null : id));
     };
 
-
-    // -------> ERROR MESSAGE
+    // -----------> ERROR Message
     if (error) {
         return (
             <p style={{ color: "red", textAlign: 'center', padding: '20px' }}>
                 Projects: {error}
-            </p>);
+            </p>
+        );
     }
 
     return (
         <section className="p-project-section" id="PROJECTS">
             <div className="p-container">
-                {/* PROJECTS HEADER */}
                 <div className="a-dossier-header">
                     <div className="p-title">
                         <FaFolderOpen className="a-icon-neon" />
@@ -44,7 +42,7 @@ const Project = () => {
 
                 <div className="p-grid">
                     {loading ? (
-                        // SKELETON LOADER
+                        // ----------------> SKELETON LOADER
                         [1, 2, 3].map((item) => (
                             <div key={item} className="p-terminal-card skeleton">
                                 <div className="p-terminal-header">
@@ -62,7 +60,6 @@ const Project = () => {
                                     <div className="p-info">
                                         <div className="s-skeleton" style={{ width: '70%', height: '1.5rem', marginBottom: '15px' }}></div>
                                         <div className="s-skeleton" style={{ width: '100%', height: '0.8rem', marginBottom: '8px' }}></div>
-                                        <div className="s-skeleton" style={{ width: '90%', height: '0.8rem', marginBottom: '20px' }}></div>
                                         <div className="p-tech-stack">
                                             {[1, 2, 3].map((t) => (
                                                 <div key={t} className="s-skeleton" style={{ width: '60px', height: '25px' }}></div>
@@ -73,7 +70,7 @@ const Project = () => {
                             </div>
                         ))
                     ) : (
-                        // MAIN PROJECT DATA
+                        // ------------------> SHOW ACTUAL DATA
                         projectData.map((project, index) => (
                             <div 
                                 key={project.id} 
@@ -97,7 +94,6 @@ const Project = () => {
                                             loading="lazy" 
                                         />
                                         <div className="p-overlay">
-                                            {/* stopPropagation prevents the card from closing when clicking the actual buttons */}
                                             <div className="p-links" onClick={(e) => e.stopPropagation()}>
                                                 <a href={project.github_url} target="_blank" rel="noreferrer" className="p-icon-btn">
                                                     <FaGithub />
@@ -109,6 +105,7 @@ const Project = () => {
                                         </div>
                                     </div>
 
+                                    {/* -----------> PROJECT DESCRIPTION <----------- */}
                                     <div className="p-info">
                                         <h3 className="p-project-name">{project.title}</h3>
                                         <p className="p-project-desc">{project.description}</p>

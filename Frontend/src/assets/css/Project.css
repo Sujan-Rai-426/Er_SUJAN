@@ -40,10 +40,9 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
-    cursor: pointer; /* Suggest it is clickable for mobile */
+    cursor: pointer;
 }
 
-/* Top Bar Styling */
 .p-terminal-header {
     background: rgba(0, 255, 65, 0.08);
     padding: 12px 18px;
@@ -66,7 +65,6 @@
     font-weight: bold;
 }
 
-/* Image Wrapper */
 .p-image-wrapper {
     position: relative;
     overflow: hidden;
@@ -78,48 +76,51 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* filter: grayscale(100%) brightness(0.7); */
+    filter: grayscale(5%); /* Initial state slightly grey */
     transition: 0.6s ease;
 }
 
 .p-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.7); /* Darker for better contrast on mobile */
+    background: rgba(0, 0, 0, 0.85); 
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 0;
     transition: 0.3s;
     backdrop-filter: blur(4px);
-    pointer-events: none; /* Prevent interference unless active */
+    pointer-events: none; /* Block interactions when closed */
 }
 
-/* Card Active/Hover State */
-.p-terminal-card:hover .p-overlay,
+/* Open State */
 .p-terminal-card.is-active .p-overlay {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: auto; /* Allow clicks on icons when open */
 }
 
-.p-terminal-card:hover img,
 .p-terminal-card.is-active img {
-    filter: grayscale(0%) brightness(0.5);
+    filter: grayscale(0%) brightness(0.4);
     transform: scale(1.05);
 }
 
-.p-terminal-card:hover,
 .p-terminal-card.is-active {
     border-color: var(--p-neon);
     transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(0, 255, 65, 0.15);
 }
 
-/* Info Section */
+/* Also allow standard Hover for Desktop */
+@media (hover: hover) {
+    .p-terminal-card:hover .p-overlay { opacity: 1; pointer-events: auto; }
+    .p-terminal-card:hover img { filter: grayscale(0%) brightness(0.4); transform: scale(1.05); }
+    .p-terminal-card:hover { border-color: var(--p-neon); transform: translateY(-5px); }
+}
+
 .p-info { padding: 25px; }
 .p-project-name { color: #fff; margin-bottom: 12px; font-size: 1.25rem; }
 .p-project-desc { color: #a0a0a0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
 
-/* Tech Tags */
 .p-tech-stack { display: flex; flex-wrap: wrap; gap: 12px; }
 .p-tag {
     font-size: 0.75rem;
