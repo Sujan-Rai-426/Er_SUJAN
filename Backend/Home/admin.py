@@ -11,11 +11,12 @@ from Home.models import (
 
 # 1. Custom Form for Project to ensure No-CSS usability
 class ProjectAdminForm(forms.ModelForm):
-    # Defining the field explicitly here overrides everything else
+    # Overriding the field here forces the checkbox widget
     tech = forms.ModelMultipleChoiceField(
         queryset=Technology.objects.all(),
         widget=forms.CheckboxSelectMultiple,
-        required=False
+        required=False,
+        label="Select Technologies"
     )
 
     class Meta:
@@ -26,8 +27,8 @@ class ProjectAdminForm(forms.ModelForm):
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectAdminForm
     list_display = ('title', 'live_url', 'github_url')
-    # Make sure filter_horizontal is NOT here
-    
+
+
 # 2. Skill Inline for better management
 class SkillInline(admin.TabularInline):
     model = Skill
