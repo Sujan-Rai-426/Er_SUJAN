@@ -11,20 +11,22 @@ from Home.models import (
 
 # 1. Custom Form for Project to ensure No-CSS usability
 class ProjectAdminForm(forms.ModelForm):
+    # Defining the field explicitly here overrides everything else
+    tech = forms.ModelMultipleChoiceField(
+        queryset=Technology.objects.all(),
+        widget=forms.CheckboxSelectMultiple,
+        required=False
+    )
+
     class Meta:
         model = Project
         fields = '__all__'
-        widgets = {
-            # Checkboxes are the most reliable way to select M2M without CSS
-            'tech': forms.CheckboxSelectMultiple(),
-        }
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     form = ProjectAdminForm
     list_display = ('title', 'live_url', 'github_url')
-    search_fields = ('title',)
-    # We remove filter_horizontal because it breaks without CSS/JS
+    # Make sure filter_horizontal is NOT here
     
 # 2. Skill Inline for better management
 class SkillInline(admin.TabularInline):
