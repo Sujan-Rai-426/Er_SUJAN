@@ -4,7 +4,7 @@ import "../assets/css/Navbar.css"
 
 const Home = () => {
     return (
-        <div className='container Home-container'>
+        <div className='Home-container'>
                 
             {/* Hero Section */}
             <section id='HERO' className='Home-section'>

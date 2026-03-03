@@ -5,7 +5,7 @@
 body{
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 html {
@@ -18,7 +18,7 @@ html {
 
 .Home-container{
   font-family: var(--n-font);
-  min-height: 90vh;
+  min-height: 90dvh;
   width: 100%;
 }
 .Home-section{

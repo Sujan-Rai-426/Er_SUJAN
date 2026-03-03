@@ -118,8 +118,8 @@
 }
 
 .p-info { padding: 25px; }
-.p-project-name { color: #fff; margin-bottom: 12px; font-size: 1.25rem; }
-.p-project-desc { color: #a0a0a0; font-size: 0.95rem; line-height: 1.6; margin-bottom: 25px; }
+.p-project-name { color: #fff; margin-bottom: 8px; font-size: 1.15rem; }
+.p-project-desc { color: #a0a0a0; font-size: 0.85rem; line-height: 1.6; margin-bottom: 15px; }
 
 .p-tech-stack { display: flex; flex-wrap: wrap; gap: 12px; }
 .p-tag {
@@ -167,9 +167,15 @@
 }
 
 /* MOBILE POLISH */
+@media screen and (max-width:992px){
+    .p-project-name { margin-bottom: 7px; font-size: 1rem; }
+    .p-project-desc { margin-bottom: 10px; font-size: 0.75rem; }
+    .p-tag { font-size: 0.6rem; }
+    .p-terminal-header { padding: 8px 10px; }
+}
 @media screen and (max-width: 480px) {
-    .p-project-section { padding: 1.5rem 15px !important; }
+    .p-project-section { padding: 1.5rem 5px !important; }
     .p-grid { grid-template-columns: 1fr; }
     .p-image-wrapper { height: 180px; }
-    .p-info { padding: 20px; }
+    .p-info { padding: 15px; }
 }

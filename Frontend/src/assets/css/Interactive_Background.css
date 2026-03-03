@@ -1,7 +1,7 @@
 .ib-hacker-grid-container {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #050a05;
     overflow: hidden;
     color: #00ff41;
@@ -80,7 +80,7 @@
 }.ib-hacker-grid-container {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 100dvh;
     background-color: #020502; /* Darker black-green */
     overflow: hidden;
     color: #00ff41;
