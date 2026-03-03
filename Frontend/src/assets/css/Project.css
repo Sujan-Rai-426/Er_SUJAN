@@ -179,3 +179,114 @@
     .p-image-wrapper { height: 180px; }
     .p-info { padding: 15px; }
 }
+
+
+
+/* --- New Project Counter Styles --- */
+.p-count-badge {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    color: var(--p-neon);
+    opacity: 0.7;
+    font-weight: normal;
+}
+
+/* --- View More Button Layout --- */
+.p-view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.p-view-more-btn {
+    background: transparent;
+    color: var(--p-neon);
+    border: 1px solid var(--p-neon);
+    padding: 12px 30px;
+    font-family: var(--p-font);
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.p-view-more-btn:hover {
+    background: var(--p-neon-dim);
+    box-shadow: 0 0 20px var(--p-neon-dim);
+    transform: translateY(-2px);
+}
+
+.p-view-more-btn svg {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+/* Standard Hover for icons */
+.p-icon-btn:hover {
+    background: var(--p-neon);
+    color: #000;
+    box-shadow: 0 0 15px var(--p-neon);
+}
+
+/* Grid adjustment for visibility */
+.p-grid {
+    margin-bottom: 20px;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .p-view-more-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 15px;
+        font-size: 0.8rem;
+    }
+    
+    .p-count-badge {
+        font-size: 0.7rem;
+    }
+}
+.p-view-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    padding-bottom: 40px;
+}
+
+.p-view-more-btn {
+    background: transparent;
+    color: var(--p-neon);
+    border: 1px solid var(--p-neon);
+    padding: 12px 30px;
+    font-family: var(--p-font);
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.p-view-more-btn:hover {
+    background: var(--p-neon-dim);
+    box-shadow: 0 0 20px var(--p-neon-dim);
+    transform: translateY(-2px);
+}
+
+.p-view-more-btn svg {
+    font-size: 0.8rem;
+}
+
+/* Adjust grid gap for better visual flow when expanded */
+.p-grid {
+    margin-bottom: 20px;
+}

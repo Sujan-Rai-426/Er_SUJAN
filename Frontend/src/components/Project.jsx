@@ -1,5 +1,5 @@
-import React, { useState, useMemo } from 'react';
-import { FaGithub, FaExternalLinkAlt, FaFolderOpen, FaCode } from 'react-icons/fa';
+import React, { useState, useMemo, useEffect } from 'react';
+import { FaGithub, FaExternalLinkAlt, FaFolderOpen, FaCode, FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import "../assets/css/Project.css";
 import { use_Parent_API } from '../context/Parent_API_Context';
 
@@ -7,21 +7,29 @@ const Project = () => {
     const CLOUDINARY_BASE_URL = "https://res.cloudinary.com/dusqlukhy/";
     const { projects = [], loading, error } = use_Parent_API();
 
-    // State to track which card is "active/clicked"
     const [activeCard, setActiveCard] = useState(null);
+    const [showAll, setShowAll] = useState(false);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    // Update screen size state on resize
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth <= 768);
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const projectData = useMemo(() => {
-        return (
-            Array.isArray(projects) ? [...projects].reverse() : []
-        );
+        return Array.isArray(projects) ? [...projects].reverse() : [];
     }, [projects]);
 
-    // Toggle Logic: If clicking the same card, reset to null (close); otherwise, open new one.
+    // Set default view: 3 for mobile, 6 for desktop
+    const defaultLimit = isMobile ? 3 : 6;
+    const visibleProjects = showAll ? projectData : projectData.slice(0, defaultLimit);
+
     const handleToggleOverlay = (id) => {
         setActiveCard(prev => (prev === id ? null : id));
     };
 
-    // -----------> ERROR Message
     if (error) {
         return (
             <p style={{ color: "red", textAlign: 'center', padding: '20px' }}>
@@ -36,13 +44,18 @@ const Project = () => {
                 <div className="a-dossier-header">
                     <div className="p-title">
                         <FaFolderOpen className="a-icon-neon" />
-                        <h2 className='m-0'><strong>PROJECTS:</strong> <small>Er.Sujan</small></h2>
+                        <h2 className='m-0'>
+                            <strong>PROJECTS:</strong> <small>Er.Sujan</small>
+                            {/* Project Counter Tag */}
+                            {!loading && (
+                                <span className="p-count-badge">[{projectData.length}]</span>
+                            )}
+                        </h2>
                     </div>
                 </div>
 
                 <div className="p-grid">
                     {loading ? (
-                        // ----------------> SKELETON LOADER
                         [1, 2, 3].map((item) => (
                             <div key={item} className="p-terminal-card skeleton">
                                 <div className="p-terminal-header">
@@ -70,8 +83,7 @@ const Project = () => {
                             </div>
                         ))
                     ) : (
-                        // ------------------> SHOW ACTUAL DATA
-                        projectData.map((project, index) => (
+                        visibleProjects.map((project, index) => (
                             <div 
                                 key={project.id} 
                                 className={`p-terminal-card ${activeCard === project.id ? 'is-active' : ''}`}
@@ -105,7 +117,6 @@ const Project = () => {
                                         </div>
                                     </div>
 
-                                    {/* -----------> PROJECT DESCRIPTION <----------- */}
                                     <div className="p-info">
                                         <h3 className="p-project-name">{project.title}</h3>
                                         <p className="p-project-desc">{project.description}</p>
@@ -122,6 +133,22 @@ const Project = () => {
                         ))
                     )}
                 </div>
+
+                {/* Toggle Button Container - Only shows if there are more projects than the limit */}
+                {!loading && projectData.length > defaultLimit && (
+                    <div className="p-view-more-container">
+                        <button 
+                            className="p-view-more-btn" 
+                            onClick={() => setShowAll(!showAll)}
+                        >
+                            {showAll ? (
+                                <>CLOSE CATALOG <FaChevronUp /></>
+                            ) : (
+                                <>VIEW ALL PROJECTS ({projectData.length}) <FaChevronDown /></>
+                            )}
+                        </button>
+                    </div>
+                )}
             </div>
         </section>
     );
