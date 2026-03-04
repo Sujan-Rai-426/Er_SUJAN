@@ -1,0 +1,248 @@
+/* ---- Base Section Setup ---- */
+.p-git-section {
+    padding: 40px 0;
+    background: transparent; 
+}
+
+/* --- Terminal Body Polish --- */
+.p-info.scroll-container {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth; 
+}
+
+/* Base scroll container behavior - enable scroll but hide thumb by default */
+.p-info.scroll-container.js-scroll-hide {
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* For standard browsers */
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin; /* default thin for standard */
+}
+
+/* Hide scrollbar thumb for Webkit browsers by default */
+.p-info.scroll-container.js-scroll-hide::-webkit-scrollbar {
+    height: 6px; 
+}
+
+.p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 10px;
+}
+
+/* Show scrollbar thumb when active or scrolling on mobile */
+.p-info.scroll-container.js-scroll-hide.is-scrolling::-webkit-scrollbar-thumb,
+.p-info.scroll-container.js-scroll-hide:active::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 65, 0.2); /* Dimmed neon */
+    border: 1px solid var(--p-neon);
+    box-shadow: 0 0 5px var(--p-neon-dim);
+}
+
+/* Standard scrollbar visible when active/scrolling */
+.p-info.scroll-container.js-scroll-hide.is-scrolling,
+.p-info.scroll-container.js-scroll-hide:active {
+    scrollbar-color: var(--p-neon) rgba(0, 255, 65, 0.02);
+}
+
+/* Ensure standard visibility on Laptop/Hover devices by default */
+@media (hover: hover) and (min-width: 1024px) {
+    .p-info.scroll-container.js-scroll-hide {
+        scrollbar-width: auto;
+        scrollbar-color: rgba(0, 255, 65, 0.2) rgba(0, 255, 65, 0.02);
+    }
+    
+    .p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-thumb {
+        background: rgba(0, 255, 65, 0.2);
+        border: 1px solid var(--p-neon);
+    }
+
+    .p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-thumb:hover {
+        background: var(--p-neon);
+        box-shadow: 0 0 10px var(--p-neon);
+    }
+    
+    .p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-track {
+        background: rgba(0, 255, 65, 0.02);
+    }
+}
+
+/* --- Calendar Responsiveness and Width Handling --- */
+.calendar-wrapper {
+    margin-top: 10px;
+    display: block;
+    width: 100%;
+    /* removed duplicate contradictory rigid width definitions that cause overlaps */
+}
+
+/* Removed rigid min-widths directly on .calendar-wrapper. 
+   We rely on blockSize in JS to shrink dots, making the overall SVG narrower naturally. */
+
+/* Library overrides */
+.p-info .react-github-calendar {
+    color: #fff !important;
+    font-family: var(--p-font) !important;
+    display: block;
+    width: 100%;
+}
+
+/* Add responsive behavior directly to SVG */
+.p-info .react-github-calendar svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Glow effect for high-activity contribution days */
+.react-github-calendar__day[fill="#00ff41"] {
+    filter: drop-shadow(0 0 4px var(--p-neon));
+}
+
+/* ---- Header Layout Fixing ---- */
+.git-header-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.git-user-block {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Laptop/Tablet layout */
+@media screen and (min-width: 481px) {
+    .responsive-git-header {
+        justify-content: space-between;
+    }
+}
+
+/* Mobile fix for overlapping header elements shown in images */
+@media screen and (max-width: 480px) {
+    .responsive-git-header {
+        flex-direction: column;
+        align-items: flex-start; /* Align stacking elements left */
+        gap: 10px; /* reduced vertical gap */
+    }
+    
+    .git-header-inline .p-project-name {
+        font-size: 1rem;
+        margin: 0;
+    }
+    
+    /* Ensure year selector fits full width when stacked */
+    .git-header-inline .git-year-selector {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 4px;
+        flex-wrap: wrap; /* allow buttons to wrap if screen is extreme */
+    }
+}
+
+/* ---- Github Year Selector ------- */
+.git-year-selector {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 255, 65, 0.05);
+    padding: 4px 10px;
+    border: 1px solid var(--p-neon-dim);
+    border-radius: 4px;
+}
+
+.history-icon {
+    margin-right: 5px; 
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.year-btn {
+    background: transparent;
+    border: none;
+    color: #888;
+    font-family: var(--p-font);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 2px 5px;
+}
+
+.year-btn:hover {
+    color: var(--p-neon);
+}
+
+.year-btn.active {
+    color: var(--p-neon);
+    background: var(--p-neon-dim);
+    font-weight: bold;
+}
+
+/* --- Typography & Animations --- */
+.git-icon-neon {
+    color: var(--p-neon);
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 5px var(--p-neon-dim));
+}
+
+.p-project-desc {
+    opacity: 0.8;
+    margin-top: 15px;
+    font-size: 0.75rem;
+}
+
+/* Prompt prevents weird wrapping in standard display while allowing grid shrink to work */
+.terminal-prompt {
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.blink {
+    animation: blinker 1.2s step-end infinite;
+    color: var(--p-neon);
+    font-weight: bold;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+/* --- Mobile Body Specific Overrides --- */
+@media screen and (max-width: 768px) {
+    .p-info.scroll-container {
+        padding: 15px;
+    }
+}
+
+/* --- Custom Matrix Tooltip --- */
+.matrix-tooltip {
+    background-color: #000 !important;
+    border: 1px solid var(--p-neon) !important;
+    color: var(--p-neon) !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 0.8rem !important;
+    box-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
+    padding: 8px 12px !important;
+    border-radius: 4px !important;
+    opacity: 1 !important;
+}
+
+/* Make blocks feel interactable */
+.react-github-calendar__day {
+    cursor: crosshair !important;
+    transition: transform 0.1s ease-in-out;
+}
+
+.react-github-calendar__day:hover {
+    transform: scale(1.2);
+    stroke: var(--p-neon);
+    stroke-width: 1px;
+}

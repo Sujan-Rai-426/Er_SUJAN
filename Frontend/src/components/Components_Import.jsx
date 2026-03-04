@@ -6,6 +6,7 @@ import Navbar from "./Navbar"
 import Project from "./Project"
 import Skills from "./Skills"
 import Service from "./Service"
+import GitContribution from "./GitContribution"
 
 export{
     About,
@@ -16,4 +17,5 @@ export{
     Project,
     Skills,
     Service,
+    GitContribution,
 }
