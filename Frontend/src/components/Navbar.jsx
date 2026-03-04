@@ -30,6 +30,11 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li className="n-nav-item">
+                        <a href="#GIT_CONTRIBUTION" onClick={(e) => handleNavClick(e, 'GIT_CONTRIBUTION')}>
+                            <span className="n-prefix">{"> "}</span>GIT
+                        </a>
+                    </li>
+                    <li className="n-nav-item">
                         <a href="#ABOUT" onClick={(e) => handleNavClick(e, 'ABOUT')}>
                             <span className="n-prefix">{"> "}</span>ABOUT
                         </a>
