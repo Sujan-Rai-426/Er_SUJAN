@@ -8,7 +8,7 @@
 
 .n-navbar {
     background: var(--n-bg);
-    height: 70px;
+    height: 55px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,6 +49,7 @@
     list-style: none;
     gap: 30px;
     align-items: center;
+    margin: 0 !important;
 }
 
 .n-nav-item a {
@@ -129,9 +130,9 @@
 
     .n-nav-item {
         width: 100%;
-        left: 15%;
-        padding: 15px 0;
-        margin: 10px 0;
+        left: 10%;
+        padding: 0;
+        margin: 8px 0;
         position: relative;
         z-index: 3;
     }

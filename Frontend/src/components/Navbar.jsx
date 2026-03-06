@@ -26,32 +26,32 @@ const Navbar = () => {
                 <ul className={`n-nav-links ${isOpen ? "n-active" : ""}`}>
                     <li className="n-nav-item">
                         <a href="#HERO" onClick={(e) => handleNavClick(e, 'HERO')}>
-                            <span className="n-prefix">{"> "}</span>HOME
+                            <span className="n-prefix">{">> "}</span>HOME
                         </a>
                     </li>
                     <li className="n-nav-item">
                         <a href="#GIT_CONTRIBUTION" onClick={(e) => handleNavClick(e, 'GIT_CONTRIBUTION')}>
-                            <span className="n-prefix">{"> "}</span>GIT
+                            <span className="n-prefix">{">> "}</span>GIT
                         </a>
                     </li>
                     <li className="n-nav-item">
                         <a href="#ABOUT" onClick={(e) => handleNavClick(e, 'ABOUT')}>
-                            <span className="n-prefix">{"> "}</span>ABOUT
+                            <span className="n-prefix">{">> "}</span>ABOUT
                         </a>
                     </li>
                     <li className="n-nav-item">
                         <a href="#SKILLS" onClick={(e) => handleNavClick(e, 'SKILLS')}>
-                            <span className="n-prefix">{"> "}</span>SKILLS
+                            <span className="n-prefix">{">> "}</span>SKILLS
                         </a>
                     </li>
                     <li className="n-nav-item">
                         <a href="#PROJECTS" onClick={(e) => handleNavClick(e, 'PROJECTS')}>
-                            <span className="n-prefix">{"> "}</span>PROJECTS
+                            <span className="n-prefix">{">> "}</span>PROJECTS
                         </a>
                     </li>
                     <li className="n-nav-item">
                         <a href="#CONTACT" onClick={(e) => handleNavClick(e, 'CONTACT')}>
-                            <span className="n-prefix">{"> "}</span>CONTACT
+                            <span className="n-prefix">{">> "}</span>CONTACT
                         </a>
                     </li>
                 </ul>
