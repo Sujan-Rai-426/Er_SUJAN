@@ -1,14 +1,11 @@
 :root {
-    --p-neon: #00ff41;
-    --p-neon-dim: rgba(0, 255, 65, 0.2);
     --p-bg-card: rgba(5, 10, 5, 0.95);
-    --p-font: 'Courier New', Courier, monospace;
 }
 
 .p-project-section {
     padding: 0;
-    font-family: var(--p-font);
-    color: var(--p-neon);
+    font-family: var(--font);
+    color: var(--matrix-neon);
     background: transparent;
 }
 
@@ -35,7 +32,7 @@
 /* The Terminal Card */
 .p-terminal-card {
     background: var(--p-bg-card);
-    border: 1px solid var(--p-neon-dim);
+    border: 1px solid var(--matrix--neon-dim);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
@@ -49,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--p-neon-dim);
+    border-bottom: 1px solid var(--matrix--neon-dim);
 }
 
 .p-dots { display: flex; gap: 8px; }
@@ -69,7 +66,7 @@
     position: relative;
     overflow: hidden;
     height: 200px;
-    border-bottom: 1px solid var(--p-neon-dim);
+    border-bottom: 1px solid var(--matrix--neon-dim);
 }
 
 .p-image-wrapper img {
@@ -105,7 +102,7 @@
 }
 
 .p-terminal-card.is-active {
-    border-color: var(--p-neon);
+    border-color: var(--matrix-neon);
     transform: translateY(-5px);
     box-shadow: 0 15px 50px rgba(0, 255, 65, 0.15);
 }
@@ -114,7 +111,7 @@
 @media (hover: hover) {
     .p-terminal-card:hover .p-overlay { opacity: 1; pointer-events: auto; }
     .p-terminal-card:hover img { filter: grayscale(0%) brightness(0.4); transform: scale(1.05); }
-    .p-terminal-card:hover { border-color: var(--p-neon); transform: translateY(-5px); }
+    .p-terminal-card:hover { border-color: var(--matrix-neon); transform: translateY(-5px); }
 }
 
 .p-info { padding: 25px; }
@@ -125,9 +122,9 @@
 .p-tag {
     font-size: 0.75rem;
     background: rgba(0, 255, 65, 0.03);
-    border: 1px solid var(--p-neon-dim);
+    border: 1px solid var(--matrix--neon-dim);
     padding: 5px 12px;
-    color: var(--p-neon);
+    color: var(--matrix-neon);
     display: flex;
     align-items: center;
     gap: 6px;
@@ -135,7 +132,7 @@
 
 .p-icon-btn {
     background: #000;
-    color: var(--p-neon);
+    color: var(--matrix-neon);
     width: 45px; height: 45px;
     display: flex;
     justify-content: center;
@@ -143,15 +140,15 @@
     border-radius: 50%;
     margin: 0 12px;
     font-size: 1.3rem;
-    border: 1px solid var(--p-neon);
+    border: 1px solid var(--matrix-neon);
     transition: 0.3s;
     text-decoration: none;
 }
 
 .p-icon-btn:hover {
-    background: var(--p-neon);
+    background: var(--matrix-neon);
     color: #000;
-    box-shadow: 0 0 15px var(--p-neon);
+    box-shadow: 0 0 15px var(--matrix-neon);
 }
 
 /* SKELETON ANIMATION */
@@ -187,7 +184,7 @@
 .p-count-badge {
     margin-left: 10px;
     font-size: 0.9rem;
-    color: var(--p-neon);
+    color: var(--matrix-neon);
     opacity: 0.7;
     font-weight: normal;
 }
@@ -202,10 +199,10 @@
 
 .p-view-more-btn {
     background: transparent;
-    color: var(--p-neon);
-    border: 1px solid var(--p-neon);
+    color: var(--matrix-neon);
+    border: 1px solid var(--matrix-neon);
     padding: 12px 30px;
-    font-family: var(--p-font);
+    font-family: var(--font);
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
@@ -218,8 +215,8 @@
 }
 
 .p-view-more-btn:hover {
-    background: var(--p-neon-dim);
-    box-shadow: 0 0 20px var(--p-neon-dim);
+    background: var(--matrix--neon-dim);
+    box-shadow: 0 0 20px var(--matrix--neon-dim);
     transform: translateY(-2px);
 }
 
@@ -230,9 +227,9 @@
 
 /* Standard Hover for icons */
 .p-icon-btn:hover {
-    background: var(--p-neon);
+    background: var(--matrix-neon);
     color: #000;
-    box-shadow: 0 0 15px var(--p-neon);
+    box-shadow: 0 0 15px var(--matrix-neon);
 }
 
 /* Grid adjustment for visibility */
@@ -262,10 +259,10 @@
 
 .p-view-more-btn {
     background: transparent;
-    color: var(--p-neon);
-    border: 1px solid var(--p-neon);
+    color: var(--matrix-neon);
+    border: 1px solid var(--matrix-neon);
     padding: 12px 30px;
-    font-family: var(--p-font);
+    font-family: var(--font);
     font-size: 0.9rem;
     font-weight: bold;
     cursor: pointer;
@@ -278,8 +275,8 @@
 }
 
 .p-view-more-btn:hover {
-    background: var(--p-neon-dim);
-    box-shadow: 0 0 20px var(--p-neon-dim);
+    background: var(--matrix--neon-dim);
+    box-shadow: 0 0 20px var(--matrix--neon-dim);
     transform: translateY(-2px);
 }
 

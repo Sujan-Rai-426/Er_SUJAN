@@ -1,11 +1,7 @@
 /* Hero.css - Hacker Portfolio Theme */
 
 :root {
-    --h-neon: #00ff41;           /* Matrix Green */
-    --h-bg: #010501;             /* Deep Cyber Black */
-    --h-font: 'Courier New', Courier, monospace;
-    --h-neon-dim: rgba(0, 255, 65, 0.15);
-    --h-danger: #ff3333;
+    --h-bg: #010501;            
 }
 
 .h-hero-fullscreen {
@@ -13,8 +9,8 @@
     width: 100%;
     /* min-height: 100dvh; */
     /* background: var(--h-bg); */
-    color: var(--h-neon);
-    font-family: var(--h-font);
+    color: var(--matrix-neon);
+    font-family: var(--font);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -43,7 +39,7 @@
     padding: 2px 40px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--h-neon-dim);
+    border-bottom: 1px solid var(--matrix--neon-dim);
     font-size: 0.8rem;
     z-index: 20;
     letter-spacing: 2px;
@@ -117,9 +113,9 @@
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid var(--h-neon);
+    border: 2px solid var(--matrix-neon);
     filter: grayscale(1) brightness(0.9) contrast(1.1);
-    box-shadow: 0 0 30px var(--h-neon-dim);
+    box-shadow: 0 0 30px var(--matrix--neon-dim);
 }
 
 .h-scan-ring {
@@ -129,8 +125,8 @@
     right: -15px;
     bottom: -15px;
     border: 2px solid transparent;
-    border-top: 2px solid var(--h-neon);
-    border-bottom: 2px solid var(--h-neon);
+    border-top: 2px solid var(--matrix-neon);
+    border-bottom: 2px solid var(--matrix-neon);
     border-radius: 50%;
     animation: h-rotate 4s linear infinite;
 }
@@ -156,7 +152,7 @@
     margin-top: 25px;
     background: rgba(0, 255, 65, 0.04);
     padding: 25px;
-    border: 1px solid var(--h-neon-dim);
+    border: 1px solid var(--matrix--neon-dim);
     max-width: 600px;
     backdrop-filter: blur(4px);
     position: relative;
@@ -167,7 +163,7 @@
     position: absolute;
     top: -10px;
     right: 15px;
-    background: var(--h-neon);
+    background: var(--matrix-neon);
     color: #000;
     font-size: 0.6rem;
     padding: 2px 6px;
@@ -195,10 +191,10 @@
 
 .h-console-btn {
     background: transparent;
-    border: 1px solid var(--h-neon);
-    color: var(--h-neon);
+    border: 1px solid var(--matrix-neon);
+    color: var(--matrix-neon);
     padding: 14px 35px;
-    font-family: var(--h-font);
+    font-family: var(--font);
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
@@ -210,21 +206,21 @@
 }
 
 .h-console-btn:hover {
-    background: var(--h-neon);
+    background: var(--matrix-neon);
     color: #000;
-    box-shadow: 0 0 25px var(--h-neon);
+    box-shadow: 0 0 25px var(--matrix-neon);
     transform: translateY(-3px);
 }
 
 .h-console-btn.h-danger {
-    border-color: var(--h-danger);
-    color: var(--h-danger);
+    border-color: var(--color-danger);
+    color: var(--color-danger);
 }
 
 .h-console-btn.h-danger:hover {
-    background: var(--h-danger);
+    background: var(--color-danger);
     color: #fff;
-    box-shadow: 0 0 25px var(--h-danger);
+    box-shadow: 0 0 25px var(--color-danger);
 }
 
 /* Bottom Progress HUD */
@@ -239,8 +235,8 @@
 .h-scanner-line {
     width: 100%;
     height: 1px;
-    background: var(--h-neon);
-    box-shadow: 0 0 10px var(--h-neon);
+    background: var(--matrix-neon);
+    box-shadow: 0 0 10px var(--matrix-neon);
     animation: h-pulse 2s infinite ease-in-out;
 }
 

@@ -1,9 +1,6 @@
 /* Hacker Theme Variables */
 :root {
     --n-bg: #050a05;
-    --n-neon: #00ff41;
-    --n-neon-dim: rgba(0, 255, 65, 0.2);
-    --n-font: 'Courier New', Courier, monospace;
 }
 
 .n-navbar {
@@ -15,8 +12,8 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    font-family: var(--n-font);
-    border-bottom: 1px solid var(--n-neon-dim);
+    font-family: var(--font);
+    border-bottom: 1px solid var(--matrix--neon-dim);
 }
 
 .n-container {
@@ -29,14 +26,14 @@
 }
 
 .n-logo {
-    color: var(--n-neon);
+    color: var(--matrix-neon);
     font-size: 1.2rem;
     font-weight: bold;
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
-    text-shadow: 0 0 5px var(--n-neon);
+    text-shadow: 0 0 5px var(--matrix-neon);
 }
 
 .n-cursor {
@@ -54,7 +51,7 @@
 
 .n-nav-item a {
     text-decoration: none;
-    color: var(--n-neon);
+    color: var(--matrix-neon);
     font-size: 0.9rem;
     letter-spacing: 1px;
     transition: all 0.3s ease;
@@ -63,7 +60,7 @@
 
 .n-nav-item a:hover {
     opacity: 1;
-    text-shadow: 0 0 10px var(--n-neon);
+    text-shadow: 0 0 10px var(--matrix-neon);
 }
 
 .n-prefix {
@@ -73,7 +70,7 @@
 
 .n-mobile-icon {
     display: none;
-    color: var(--n-neon);
+    color: var(--matrix-neon);
     font-size: 1.6rem;
     cursor: pointer;
     z-index: 1001; /* Above sidebar */
@@ -84,8 +81,8 @@
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: var(--n-neon);
-    box-shadow: 0 0 15px var(--n-neon);
+    background: var(--matrix-neon);
+    box-shadow: 0 0 15px var(--matrix-neon);
 }
 
 /* MOBILE SIDEBAR STYLING */
@@ -141,20 +138,20 @@
         font-size: 1.8rem;
         font-weight: 800;
         color: #fff; /* White text for contrast */
-        text-shadow: 2px 2px var(--n-neon-dim);
+        text-shadow: 2px 2px var(--matrix--neon-dim);
         letter-spacing: 5px;
         transition: 0.3s;
     }
 
     /* Hover effect inside the mobile menu */
     .n-nav-item a:hover {
-        color: var(--n-neon);
-        text-shadow: 0 0 15px var(--n-neon);
+        color: var(--matrix-neon);
+        text-shadow: 0 0 15px var(--matrix-neon);
         transform: skewX(-10deg);
     }
 
     .n-prefix {
-        color: var(--n-neon);
+        color: var(--matrix-neon);
         margin-right: 10px;
     }
 

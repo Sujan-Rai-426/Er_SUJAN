@@ -4,7 +4,7 @@
     min-height: 100dvh;
     background-color: #050a05;
     overflow: hidden;
-    color: #00ff41;
+    color: var(--matrix-neon);
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -83,7 +83,7 @@
     min-height: 100dvh;
     background-color: #020502; /* Darker black-green */
     overflow: hidden;
-    color: #00ff41;
+    color: var(--matrix-neon);
     font-family: 'Courier New', Courier, monospace;
 }
 

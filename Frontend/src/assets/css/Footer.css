@@ -1,18 +1,14 @@
 :root {
     --n-bg: #050a05;
-    --n-neon: #00ff41;
-    --n-neon-dim: rgba(0, 255, 65, 0.15);
-    --n-error: #ff3333;
-    --n-font: 'Courier New', Courier, monospace;
 }
 
 .f-footer {
     background-color: var(--n-bg);
-    color: var(--n-neon);
-    font-family: var(--n-font);
+    color: var(--matrix-neon);
+    font-family: var(--font);
     padding: 40px 0 20px 0;
     position: relative;
-    border-top: 1px solid var(--n-neon-dim);
+    border-top: 1px solid var(--matrix--neon-dim);
 }
 
 .f-footer-divider {
@@ -20,8 +16,8 @@
     top: 0;
     width: 100%;
     height: 2px;
-    background: var(--n-neon);
-    box-shadow: 0 0 15px var(--n-neon);
+    background: var(--matrix-neon);
+    box-shadow: 0 0 15px var(--matrix-neon);
 }
 
 .f-footer-container {
@@ -37,7 +33,7 @@
     font-size: 1.1rem;
     margin-bottom: 20px;
     text-transform: uppercase;
-    border-bottom: 1px solid var(--n-neon-dim);
+    border-bottom: 1px solid var(--matrix--neon-dim);
     display: inline-block;
 }
 
@@ -60,8 +56,8 @@
 }
 
 .f-online {
-    color: var(--n-neon);
-    filter: drop-shadow(0 0 3px var(--n-neon));
+    color: var(--matrix-neon);
+    filter: drop-shadow(0 0 3px var(--matrix-neon));
 }
 
 .f-blink-text {
@@ -79,7 +75,7 @@
 }
 
 .f-footer-links a {
-    color: var(--n-neon);
+    color: var(--matrix-neon);
     text-decoration: none;
     font-size: 0.9rem;
     transition: 0.3s;
@@ -87,7 +83,7 @@
 
 .f-footer-links a:hover {
     padding-left: 10px;
-    background: var(--n-neon);
+    background: var(--matrix-neon);
     color: #000;
 }
 
@@ -98,7 +94,7 @@
 }
 
 .f-social-link {
-    color: var(--n-neon);
+    color: var(--matrix-neon);
     font-size: 1.5rem;
     position: relative;
     transition: 0.3s;
@@ -106,7 +102,7 @@
 
 .f-social-link:hover {
     transform: translateY(-5px);
-    text-shadow: 0 0 10px var(--n-neon);
+    text-shadow: 0 0 10px var(--matrix-neon);
 }
 
 .f-tooltip {
@@ -115,7 +111,7 @@
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.6rem;
-    background: var(--n-neon);
+    background: var(--matrix-neon);
     color: #000;
     padding: 2px 5px;
     display: none;
@@ -129,7 +125,7 @@
 .f-footer-bottom {
     text-align: center;
     margin-top: 50px;
-    border-top: 1px solid var(--n-neon-dim);
+    border-top: 1px solid var(--matrix--neon-dim);
     padding-top: 20px;
     font-size: 0.75rem;
     opacity: 0.6;

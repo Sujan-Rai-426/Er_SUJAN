@@ -1,14 +1,12 @@
 :root {
-    --s-neon: #00ff41;
     --s-bg: #050a05;
-    --s-font: 'Courier New', Courier, monospace;
 }
 
 .s-section {
     padding: clamp(50px, 10vh, 100px) 20px;
     /* background-color: var(--s-bg); */
-    font-family: var(--s-font);
-    color: var(--s-neon);
+    font-family: var(--font);
+    color: var(--matrix-neon);
 }
 
 .s-container {
@@ -18,7 +16,7 @@
 
 .s-header {
     margin-bottom: 60px;
-    border-left: 4px solid var(--s-neon);
+    border-left: 4px solid var(--matrix-neon);
     padding-left: 20px;
 }
 
@@ -54,7 +52,7 @@
 }
 
 .s-card:hover {
-    border-color: var(--s-neon);
+    border-color: var(--matrix-neon);
     transform: translateY(-10px);
     background: rgba(0, 255, 65, 0.05);
 }
@@ -65,8 +63,8 @@
     position: absolute;
     top: 0; right: 0;
     width: 20px; height: 20px;
-    border-top: 2px solid var(--s-neon);
-    border-right: 2px solid var(--s-neon);
+    border-top: 2px solid var(--matrix-neon);
+    border-right: 2px solid var(--matrix-neon);
     opacity: 0;
     transition: 0.3s;
 }
@@ -89,8 +87,8 @@
 .s-icon-box {
     font-size: 2.5rem;
     margin-bottom: 25px;
-    color: var(--s-neon);
-    filter: drop-shadow(0 0 5px var(--s-neon));
+    color: var(--matrix-neon);
+    filter: drop-shadow(0 0 5px var(--matrix-neon));
 }
 
 .s-card-title {
@@ -116,7 +114,7 @@
 
 .s-tag {
     font-size: 0.7rem;
-    color: var(--s-neon);
+    color: var(--matrix-neon);
     background: rgba(0, 255, 65, 0.1);
     padding: 4px 10px;
     border: 1px solid rgba(0, 255, 65, 0.2);

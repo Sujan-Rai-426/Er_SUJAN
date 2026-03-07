@@ -39,14 +39,14 @@
 .p-info.scroll-container.js-scroll-hide.is-scrolling::-webkit-scrollbar-thumb,
 .p-info.scroll-container.js-scroll-hide:active::-webkit-scrollbar-thumb {
     background: rgba(0, 255, 65, 0.2); /* Dimmed neon */
-    border: 1px solid var(--p-neon);
-    box-shadow: 0 0 5px var(--p-neon-dim);
+    border: 1px solid var(--matrix-neon);
+    box-shadow: 0 0 5px var(--matrix--neon-dim);
 }
 
 /* Standard scrollbar visible when active/scrolling */
 .p-info.scroll-container.js-scroll-hide.is-scrolling,
 .p-info.scroll-container.js-scroll-hide:active {
-    scrollbar-color: var(--p-neon) rgba(0, 255, 65, 0.02);
+    scrollbar-color: var(--matrix-neon) rgba(0, 255, 65, 0.02);
 }
 
 /* Ensure standard visibility on Laptop/Hover devices by default */
@@ -58,12 +58,12 @@
     
     .p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-thumb {
         background: rgba(0, 255, 65, 0.2);
-        border: 1px solid var(--p-neon);
+        border: 1px solid var(--matrix-neon);
     }
 
     .p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-thumb:hover {
-        background: var(--p-neon);
-        box-shadow: 0 0 10px var(--p-neon);
+        background: var(--matrix-neon);
+        box-shadow: 0 0 10px var(--matrix-neon);
     }
     
     .p-info.scroll-container.js-scroll-hide::-webkit-scrollbar-track {
@@ -85,7 +85,7 @@
 /* Library overrides */
 .p-info .react-github-calendar {
     color: #fff !important;
-    font-family: var(--p-font) !important;
+    font-family: var(--font) !important;
     display: block;
     width: 100%;
 }
@@ -99,7 +99,7 @@
 
 /* Glow effect for high-activity contribution days */
 .react-github-calendar__day[fill="#00ff41"] {
-    filter: drop-shadow(0 0 4px var(--p-neon));
+    filter: drop-shadow(0 0 4px var(--matrix-neon));
 }
 
 /* ---- Header Layout Fixing ---- */
@@ -153,7 +153,7 @@
     gap: 8px;
     background: rgba(0, 255, 65, 0.05);
     padding: 4px 10px;
-    border: 1px solid var(--p-neon-dim);
+    border: 1px solid var(--matrix--neon-dim);
     border-radius: 4px;
 }
 
@@ -167,7 +167,7 @@
     background: transparent;
     border: none;
     color: #888;
-    font-family: var(--p-font);
+    font-family: var(--font);
     font-size: 0.75rem;
     cursor: pointer;
     transition: 0.3s;
@@ -175,20 +175,20 @@
 }
 
 .year-btn:hover {
-    color: var(--p-neon);
+    color: var(--matrix-neon);
 }
 
 .year-btn.active {
-    color: var(--p-neon);
-    background: var(--p-neon-dim);
+    color: var(--matrix-neon);
+    background: var(--matrix--neon-dim);
     font-weight: bold;
 }
 
 /* --- Typography & Animations --- */
 .git-icon-neon {
-    color: var(--p-neon);
+    color: var(--matrix-neon);
     font-size: 1.5rem;
-    filter: drop-shadow(0 0 5px var(--p-neon-dim));
+    filter: drop-shadow(0 0 5px var(--matrix--neon-dim));
 }
 
 .p-project-desc {
@@ -207,7 +207,7 @@
 
 .blink {
     animation: blinker 1.2s step-end infinite;
-    color: var(--p-neon);
+    color: var(--matrix-neon);
     font-weight: bold;
 }
 
@@ -228,8 +228,8 @@
 /* --- Custom Matrix Tooltip --- */
 .matrix-tooltip {
     background-color: #000 !important;
-    border: 1px solid var(--p-neon) !important;
-    color: var(--p-neon) !important;
+    border: 1px solid var(--matrix-neon) !important;
+    color: var(--matrix-neon) !important;
     font-family: 'Courier New', Courier, monospace !important;
     font-size: 0.8rem !important;
     box-shadow: 0 0 10px rgba(0, 255, 65, 0.3) !important;
@@ -246,6 +246,6 @@
 
 .react-github-calendar__day:hover {
     transform: scale(1.2);
-    stroke: var(--p-neon);
+    stroke: var(--matrix-neon);
     stroke-width: 1px;
 }

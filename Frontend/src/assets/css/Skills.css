@@ -1,13 +1,11 @@
 :root {
-    --s-neon: #00ff41;
     --s-bg-card: rgba(0, 20, 0, 0.6);
-    --s-font: 'Courier New', Courier, monospace;
 }
 
 .s-skills-section {
     padding: 0;
-    font-family: var(--s-font);
-    color: var(--s-neon);
+    font-family: var(--font);
+    color: var(--matrix-neon);
 }
 
 .s-container {
@@ -31,8 +29,8 @@
 .s-scanner-line {
     width: 100px;
     height: 2px;
-    background: var(--s-neon);
-    box-shadow: 0 0 10px var(--s-neon);
+    background: var(--matrix-neon);
+    box-shadow: 0 0 10px var(--matrix-neon);
 }
 
 /* Skills Grid */
@@ -57,11 +55,11 @@
     position: absolute;
     top: 0; left: 0;
     width: 4px; height: 100%;
-    background: var(--s-neon);
+    background: var(--matrix-neon);
 }
 
 .s-card:hover {
-    border-color: var(--s-neon);
+    border-color: var(--matrix-neon);
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 255, 65, 0.1);
 }
@@ -101,7 +99,7 @@
 
 .s-progress-fill {
     height: 100%;
-    background: var(--s-neon);
+    background: var(--matrix-neon);
     position: relative;
     transition: width 1.5s cubic-bezier(0.1, 0, 0.3, 1);
 }

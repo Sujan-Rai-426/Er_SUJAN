@@ -1,16 +1,11 @@
 :root {
-    --c-neon: #00ff41;
-    --c-neon-dim: rgba(0, 255, 65, 0.2);
-    --c-error: #ff3e3e;
-    --c-process: #3498db;
     --c-bg: #030803;
-    --c-font: 'Courier New', Courier, monospace;
 }
 
 .c-main-section {
     position: relative;
     padding: clamp(60px, 10vh, 100px) 20px;
-    font-family: var(--c-font);
+    font-family: var(--font);
     overflow: hidden;
     backdrop-filter: blur(3px);
     border: 1px dashed rgba(0, 255, 65, 0.2);
@@ -22,7 +17,7 @@
     top: 0; left: 0;
     width: 100%; height: 4px;
     background: rgba(0, 255, 65, 0.1);
-    box-shadow: 0 0 10px var(--c-neon);
+    box-shadow: 0 0 10px var(--matrix-neon);
     z-index: 1;
     pointer-events: none;
     animation: scan 6s linear infinite;
@@ -43,12 +38,12 @@
 /* Header */
 .c-terminal-header {
     margin-bottom: 50px;
-    border-bottom: 2px solid var(--c-neon);
+    border-bottom: 2px solid var(--matrix-neon);
     padding-bottom: 15px;
 }
 
 .c-title {
-    color: var(--c-neon);
+    color: var(--matrix-neon);
     font-size: clamp(1.1rem, 3vw, 2rem);
     display: flex;
     align-items: center;
@@ -67,10 +62,10 @@
 
 /* Status Logic */
 .c-result { font-weight: bold; margin-left: 10px; }
-.status-idle { color: var(--c-neon); animation: blink 1.5s infinite; }
-.status-processing { color: var(--c-process); }
-.status-success { color: var(--c-neon); text-shadow: 0 0 8px var(--c-neon); }
-.status-error { color: var(--c-error); }
+.status-idle { color: var(--matrix-neon); animation: blink 1.5s infinite; }
+.status-processing { color: var(--color-process); }
+.status-success { color: var(--matrix-neon); text-shadow: 0 0 8px var(--matrix-neon); }
+.status-error { color: var(--color-danger); }
 
 @keyframes blink { 50% { opacity: 0.4; } }
 
@@ -86,7 +81,7 @@
     display: flex;
     gap: 20px;
     background: rgba(0, 255, 65, 0.03);
-    border: 1px solid var(--c-neon-dim);
+    border: 1px solid var(--matrix--neon-dim);
     padding: 20px;
     margin-bottom: 20px;
     transition: 0.3s;
@@ -94,7 +89,7 @@
 
 .c-icon-frame {
     font-size: 1.5rem;
-    color: var(--c-neon);
+    color: var(--matrix-neon);
     padding: 10px;
 }
 
@@ -105,7 +100,7 @@
 /* Form Window */
 .c-form-window {
     background: rgba(0, 15, 0, 0.9);
-    border: 1px solid var(--c-neon-dim);
+    border: 1px solid var(--matrix--neon-dim);
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -114,7 +109,7 @@
     padding: 12px 20px;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid var(--c-neon-dim);
+    border-bottom: 1px solid var(--matrix--neon-dim);
 }
 
 .c-dots { display: flex; gap: 8px; }
@@ -127,26 +122,26 @@
 /* Input Styling */
 .c-actual-form { padding: 30px; display: flex; flex-direction: column; gap: 20px; }
 .c-input-box { display: flex; flex-direction: column; gap: 8px; }
-.c-input-box label { font-size: 0.75rem; color: var(--c-neon); display: flex; align-items: center; gap: 8px; }
+.c-input-box label { font-size: 0.75rem; color: var(--matrix-neon); display: flex; align-items: center; gap: 8px; }
 
 .c-input-box input, .c-input-box textarea {
     background: #000;
     border: 1px solid #1a3a1a;
     padding: 12px;
     color: #fff;
-    font-family: var(--c-font);
+    font-family: var(--font);
     outline: none;
     transition: 0.3s;
 }
 
 .c-input-box input:focus, .c-input-box textarea:focus {
-    border-color: var(--c-neon);
-    box-shadow: inset 0 0 5px var(--c-neon-dim);
+    border-color: var(--matrix-neon);
+    box-shadow: inset 0 0 5px var(--matrix--neon-dim);
 }
 
 /* Button */
 .c-submit-btn {
-    background: var(--c-neon);
+    background: var(--matrix-neon);
     color: #000;
     border: none;
     padding: 18px;
